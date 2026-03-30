@@ -1,2 +1,2 @@
 # DSA-With-CPP 
-here is my DSA journey with Striver A2Z sheet in C++ lanugage.
+Here is my DSA journey with Striver A2Z sheet in C++ lanugage.
