@@ -18,7 +18,8 @@ int main(){
         nums.push_back(arr[i]);
     }
     for(int i = 0 ; i<nums.size(); i++){
-        cout<< nums[i]<< endl;
+        cout<< nums[i]<< " ";
     }
     return 0;
 } 
+// Time complexity O(N^2)
