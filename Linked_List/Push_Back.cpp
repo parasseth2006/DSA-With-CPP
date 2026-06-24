@@ -20,34 +20,35 @@ class List{
     List(){
         head = tail = NULL;
     }
-    //Function to insert at the head of LL
-    void pushFront(int val){
+    //Function to insert at the end of LL
+    void pushBack(int val){
         Node* newNode = new Node(val);
         if(head == NULL){
             head = tail = newNode;
         }
         else{
-            newNode->next = head;
-            head = newNode;
+            tail->next = newNode;
+            tail = newNode;
         }
     }
     //Function to print a LL
     void printLL(){
         Node* temp = head;
         while(temp!=NULL){
-            cout<< temp->data<<"  ";
+            cout<< temp->data<<" -> ";
             temp = temp->next;
         }
+        cout<<"NULL" <<endl;
     }
 };
 
 //Main function
 int main(){
     List ll;
-    ll.pushFront(1);
-    ll.pushFront(2);
-    ll.pushFront(3);
-    ll.pushFront(4);
+    ll.pushBack(1);
+    ll.pushBack(2);
+    ll.pushBack(3);
+    ll.pushBack(4);
     ll.printLL();
     return 0;
 
