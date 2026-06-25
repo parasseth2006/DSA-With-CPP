@@ -22,7 +22,7 @@ class Node{
 
 };
 
-//Function to convert array to DDL
+//Function to convert Array to DLL
 Node* ConvertArr2DDL(vector<int>&arr){
     Node* head = new Node(arr[0]);
     Node* prev = head;
@@ -34,18 +34,34 @@ Node* ConvertArr2DDL(vector<int>&arr){
     return head;
 }
 
-//Function to print DDL
+//Function to delete head of DLL
+Node* deleteHead(Node* head){
+    if(head == NULL || head -> next == NULL){
+        return NULL;
+    }
+    Node* prev = head;
+    head = head -> next;
+    head -> back = nullptr;
+    prev -> next = nullptr;
+    delete prev;
+    return head;
+}
+//Function to print DLL
 void printLL(Node* head){
     Node* temp = head;
     while(temp!=NULL){
         cout<< temp->data<<"  ";
         temp = temp->next;
     }
+    cout<< endl;
     
 }
 int main(){
     vector<int>arr = {1,2,3,4};
     Node* head = ConvertArr2DDL(arr);
+    printLL(head);
+    head = deleteHead(head);
+    cout<<"After deletion of head:\n";
     printLL(head);
     return 0;
 }
