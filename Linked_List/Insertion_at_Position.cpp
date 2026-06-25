@@ -1,4 +1,4 @@
-//Program to insert a new node at the beginning (head) of the Linked List
+//Program to insert a new node at any position in the Linked List
 #include <iostream>
 using namespace std;
 // Node class to represent each node in the linked list
@@ -44,26 +44,29 @@ class List{
     }
     //Function to insert an element at any position in LL
     void insertAtPos(int val, int pos){
-        if(pos < 0){
+        if(pos < 1){
             cout<<"Invalid position\n";
             return;
         }
-        if(pos == 0){
+        if(pos == 1){
             pushFront(val);
             return;
         }
+        int cnt = 0;
         Node* temp = head;
-        for(int i = 0; i < pos - 1; i++){
-            if(temp == NULL){
-                cout<<"Invalid Position";
-                return;
+        while(temp != NULL){
+            cnt++;
+            if(cnt == (pos-1)){
+                Node* x = new Node(val);
+                x->next = temp->next;
+                temp->next = x;
+                break;
             }
             temp = temp -> next;
         }
-        Node* newNode = new Node(val);
-        newNode -> next = temp -> next;
-        temp ->next = newNode;
-    }
+    }        
+        
+    
     //Function to print a LL
     void printLL(){
         Node* temp = head;
