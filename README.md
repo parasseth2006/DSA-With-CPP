@@ -11,30 +11,6 @@ This repository contains my solutions to the **Striver A2Z DSA Sheet**, implemen
 * 🧠 Focus on writing clean, efficient, and well-structured code
 * 📈 Regular updates as I progress through the sheet
 
-## 📂 Repository Structure
-
-```
-📦 Striver-A2Z-DSA
-├── Basics
-├── Arrays
-├── Sorting
-├── Binary Search
-├── Strings
-├── Linked List
-├── Recursion
-├── Hashing
-├── Stack
-├── Queue
-├── Trees
-├── Binary Search Trees
-├── Heaps
-├── Graphs
-├── Dynamic Programming
-├── Greedy
-├── Tries
-└── README.md
-```
-
 ## 🎯 Goals
 
 * Complete the entire Striver A2Z Sheet
