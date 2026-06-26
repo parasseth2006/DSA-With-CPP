@@ -1,4 +1,4 @@
-//Program to delete head of DLL
+//Program to delete last element tail of DDL
 #include <bits/stdc++.h>
 using namespace std;
 class Node{
@@ -35,16 +35,19 @@ Node* ConvertArr2DDL(vector<int>&arr){
     return head;
 }
 
-//Function to delete head of DLL
-Node* deleteHead(Node* head){
+//Function to delete tail of DLL
+Node* deleteTail(Node* head){
     if(head == NULL || head -> next == NULL){
         return NULL;
     }
-    Node* prev = head;
-    head = head -> next;
-    head -> back = nullptr;
-    prev -> next = nullptr;
-    delete prev;
+    Node* tail = head ;
+    while(tail -> next != NULL){
+        tail = tail -> next;
+    }
+    Node* newTail = tail -> back;
+    newTail -> next = nullptr;
+    tail -> back = nullptr;
+    delete tail;
     return head;
 }
 //Function to print DLL
@@ -54,15 +57,15 @@ void printLL(Node* head){
         cout<< temp->data<<"  ";
         temp = temp->next;
     }
-    cout<< endl;
+    cout << endl;
     
 }
 int main(){
     vector<int>arr = {1,2,3,4};
     Node* head = ConvertArr2DDL(arr);
     printLL(head);
-    head = deleteHead(head);
-    cout<<"After deletion of head:\n";
+    head = deleteTail(head);
+    cout<< "After deleting tail :\n";
     printLL(head);
     return 0;
 }
