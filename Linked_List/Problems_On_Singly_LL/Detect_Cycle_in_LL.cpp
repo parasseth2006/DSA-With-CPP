@@ -18,7 +18,7 @@ class ListNode{
     next = nullptr;
     }
 
-    };
+};
 
 //Function to check cycle in LL
 bool hasCycle(ListNode *head) {
