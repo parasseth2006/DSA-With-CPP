@@ -12,8 +12,8 @@ void PrintF(int ind, vector<int>ds, int arr[], int n){
     //Take or put the particular index in subsequence
     ds.push_back(arr[ind]);
     PrintF(ind+1, ds, arr, n);
+    
     ds.pop_back();
-
     //Not take this element is not added to subsequence
     PrintF(ind+1, ds, arr, n);
 }
