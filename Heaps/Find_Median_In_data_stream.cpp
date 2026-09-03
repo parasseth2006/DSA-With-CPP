@@ -15,7 +15,7 @@ public:
         }
 
         //Always maintain left max heap size 1 greater than or equal to right min heap
-        if(left_max_heap.size() - right_min_heap.size() > 1){
+        if(left_max_heap.size() > right_min_heap.size() + 1){
             right_min_heap.push(left_max_heap.top());
             left_max_heap.pop();
         }
