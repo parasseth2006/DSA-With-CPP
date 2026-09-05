@@ -29,3 +29,6 @@ bool flipEquiv(TreeNode* root1, TreeNode* root2) {
     flipEquiv(root1 -> right, root2 -> left);
     return noFlip || Flip;        
 }
+int main(){
+    return 0;
+}
