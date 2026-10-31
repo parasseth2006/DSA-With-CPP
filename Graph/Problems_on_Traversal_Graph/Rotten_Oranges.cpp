@@ -6,6 +6,7 @@ public:
         vector<vector<int>>vis(n,vector<int>(m,0));
         queue<pair<pair<int,int>, int>> q;
         int ans = 0;
+        //Mark already rotten oranges from grid into vis
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
                 if(grid[i][j] == 2){
@@ -26,7 +27,8 @@ public:
             for(int i = 0; i < 4; i++){
                 int nrow = row + delrow[i];
                 int ncol = col + delcol[i];
-                if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && grid[nrow][ncol] == 1 && vis[nrow][ncol] != 2){
+                if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && 
+                grid[nrow][ncol] == 1 && vis[nrow][ncol] != 2){
                     vis[nrow][ncol] = 2;
                     q.push({{nrow, ncol}, t+1});
                 }
@@ -34,7 +36,7 @@ public:
 
         }
         //All possible oranges are rotten now
-        //We check if any fresh orange is left and if then we return -1
+        //We check if any fresh orange is left and if, then we return -1
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
                 if(vis[i][j] != 2 && grid[i][j] == 1){
